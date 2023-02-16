@@ -9,160 +9,45 @@
       integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Flashcard</title>
+    <link rel="stylesheet" href="css/login.css" />
     <link rel="shortcut icon" href="img/titulo.ico" />
+
+    <meta
+      name="google-signin-client_id"
+      content="977601273994-plp29uh10pu3h45f6udldm7tjp0j5obm.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+      window.onLoadCallback = function () {
+        gapi.auth2.init({
+          client_id: "filler_text_for_client_id.apps.googleusercontent.com",
+        });
+      };
+    </script>
+
+    <title>Flashcard</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd">
-      <div class="container-fluid">
-        <img
-          src="img/titulo.ico"
-          alt="image/png"
-          style="height: 30px"
-          class="m-2"
-        />
-        <a class="navbar-brand" href="#">Flashcard</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Libros
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="caro.html"
-                    >U1. Manual Teórico-Práctico de Psicoterapia Cognitiva -
-                    Isabel Caro Gabalda</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U1. LAS CAUSAS DE NUESTRA CONDUCTA – A. CHERTOK</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. PSICOANÁLISIS – FREUD</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. ALEGATO POR UNA CIERTA CIENTIFICIDAD EN UN MOMENTO DE
-                    CRISIS – DE LOS SANTOS
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. CINCO CONFERENCIAS SOBRE PSICOANÁLISIS – FREUD
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. NOTAS SOBRE EL CONCEPTO DE LO INCONSCIENTE EN
-                    PSICOANÁLISIS – FREUD</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. TRATAMIENTO PSÍQUICO (TRATAMIENTO DEL ALMA) - FREUD</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. EL PROCESO GRUPAL – E. PICHÓN RIVIÉRE</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. FREUD: PUNTO DE PARTIDA DE LA PSICOLOGÍA SOCIAL</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. PSICOLOGÍA SOCIAL – SALVO</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. EPISTEMOLOGÍA DE LA COMPLEJIDAD – MORIN</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >U2. LA ECOLOGÍA DEL DESARROLLO HUMANO. – BRONFENBRENNER</a
-                  >
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
     <h1>Teorías psicológicas</h1>
 
-    <div class="row justify-content-center" style="width: 100%">
-      <div class="flip-card col" style="max-width: 800px; max-height: 400px;">
-        <div class="flip-card-inner" >
-          <div class="flip-card-front p-4" id="card">
-            <img src="" alt="imagen" id="img">
-            <h3 class="card-title m-4" id="preg" style="font-size: large;"></h3>
-            <div class="card-footer" id="aut"></div>
-          </div>
-          <div class="flip-card-back" id="card-back">
-            <p id="resp"></p>
-          </div>
-        </div>
-      </div>
-      <div class="container row-cols-4 mt-4" id="botones">
-      <button type="button" class="btn btn-secondary btn-sm" onclick="anterior()">
-        Anterior
-      </button>
-      <button type="button" class="btn btn-primary btn-sm" onclick="next()">
-        Siguiente
-      </button>
+    <!-- Login with google -->
+    <div class="d-flex justify-content-center">
+      <div
+        class="g-signin2"
+        data-width="200"
+        data-longtitle="true"
+        data-onsuccess="onSignIn"
+        data-scope="https://www.googleapis.com/auth/plus.login"
+        data-accesstype="offline"
+        data-redirecturi="http://127.0.0.1:5500/homepage.html"
+      ></div>
     </div>
-    </div>
-    
-
-    <!--
-    <div class="contenedor p-5">
-      <div class="row g-4 mb-3" id="prueba">
-        Acá se cargan las preguntas con js
-      </div>
-    </div>
-    -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
       crossorigin="anonymous"
     ></script>
-    <script src="js/scriptCaro.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
