@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgba(16, 16, 16, 0.932);
+    background-color: rgba(16, 16, 16, 0.826);
     justify-content: center;
     text-align: center;
     margin: 0;
@@ -55,7 +55,7 @@ h1, h2{
 
 .flip-card-front {
   background-color: rgb(54, 53, 53);
-  color: black;
+  color: rgb(245, 241, 241);
 }
 
 .flip-card-back {
@@ -68,6 +68,10 @@ h1, h2{
 .card-title{
   font-size: medium;
   line-height: 25px;
+}
+
+.card-footer{
+  background-color: rgb(92, 92, 92);
 }
 
 /* final flip card */
